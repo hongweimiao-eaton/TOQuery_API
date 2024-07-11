@@ -1,0 +1,38 @@
+{
+  "TOQuery_API.db.synonyms::LTAK": {
+    "target": {
+      "object": "/BIC/AZMM_AD712",
+      "schema": "SAPABAP1"
+    }
+  },
+  "TOQuery_API.db.synonyms::LTAP": {
+    "target": {
+      "object": "/BIC/AZMM_AD722",
+      "schema": "SAPABAP1"
+    }
+  },
+  "TOQuery_API.db.synonyms::LTBP": {
+    "target": {
+      "object": "/BIC/AZMM_AD592",
+      "schema": "SAPABAP1"
+    }
+  },
+  "TOQuery_API.db.synonyms::LTBK": {
+    "target": {
+      "object": "/BIC/AZMM_AD582",
+      "schema": "SAPABAP1"
+    }
+  },
+  "TOQuery_API.db.synonyms::AFKO": {
+    "target": {
+      "object": "/BIC/AZPP_AD012",
+      "schema": "SAPABAP1"
+    }
+  },
+  "TOQuery_API.db.synonyms::AUFK": {
+    "target": {
+      "object": "/BIC/AZSD_AD252",
+      "schema": "SAPABAP1"
+    }
+  }
+}

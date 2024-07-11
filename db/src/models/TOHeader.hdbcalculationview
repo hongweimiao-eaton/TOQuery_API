@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="db.models::TOHeader" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="TOHeader"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="db.models::OrderData">
+    <resourceUri>db.models::OrderData</resourceUri>
+  </DataSource>
+  <DataSource id="TOQuery_API.db.synonyms::LTAK">
+    <resourceUri>TOQuery_API.db.synonyms::LTAK</resourceUri>
+  </DataSource>
+  <DataSource id="TOQuery_API.db.synonyms::LTBK">
+    <resourceUri>TOQuery_API.db.synonyms::LTBK</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="GAMNG"/>
+      <viewAttribute id="GMEIN"/>
+      <viewAttribute id="PLNBEZ"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="FEVOR"/>
+      <viewAttribute id="CY_SEQNR"/>
+      <viewAttribute id="AUART"/>
+      <viewAttribute id="PSPEL"/>
+      <viewAttribute id="KDAUF"/>
+      <viewAttribute id="KDPOS"/>
+      <viewAttribute id="RSNUM"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="db.models::OrderData"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="LGNUM"/>
+      <viewAttribute id="TANUM"/>
+      <viewAttribute id="BWART"/>
+      <viewAttribute id="BWLVS"/>
+      <viewAttribute id="TBPRI"/>
+      <viewAttribute id="TRART"/>
+      <viewAttribute id="BDATU"/>
+      <viewAttribute id="BZEIT"/>
+      <viewAttribute id="REFNR"/>
+      <viewAttribute id="TBNUM"/>
+      <viewAttribute id="UBNUM"/>
+      <viewAttribute id="VBELN"/>
+      <viewAttribute id="KQUIT"/>
+      <viewAttribute id="QDATU"/>
+      <viewAttribute id="MBLNR"/>
+      <viewAttribute id="MJAHR"/>
+      <viewAttribute id="BETYP"/>
+      <viewAttribute id="BENUM"/>
+      <viewAttribute id="DRUKZ"/>
+      <viewAttribute id="DRUCK"/>
+      <viewAttribute id="TEILK"/>
+      <viewAttribute id="KR2SO"/>
+      <viewAttribute id="KR2KU"/>
+      <viewAttribute id="KDISO"/>
+      <viewAttribute id="KZPLA"/>
+      <viewAttribute id="PLDAT"/>
+      <viewAttribute id="RSNUM"/>
+      <viewAttribute id="LZNUM"/>
+      <viewAttribute id="BDART"/>
+      <viewAttribute id="PKNUM"/>
+      <viewAttribute id="PKPOS"/>
+      <viewAttribute id="KZLEI"/>
+      <viewAttribute id="KISTZ"/>
+      <viewAttribute id="KISTP"/>
+      <viewAttribute id="PERNR"/>
+      <viewAttribute id="SOLWM"/>
+      <viewAttribute id="SOLEX"/>
+      <viewAttribute id="ISTWM"/>
+      <viewAttribute id="ZEIEI"/>
+      <viewAttribute id="HRSTS"/>
+      <viewAttribute id="STDAT"/>
+      <viewAttribute id="ENDAT"/>
+      <viewAttribute id="STUZT"/>
+      <viewAttribute id="ENUZT"/>
+      <viewAttribute id="L2SKA"/>
+      <viewAttribute id="MINWM"/>
+      <viewAttribute id="LGTOR"/>
+      <viewAttribute id="LGBZO"/>
+      <viewAttribute id="KZVEP"/>
+      <viewAttribute id="SWABW"/>
+      <viewAttribute id="AUSFB"/>
+      <viewAttribute id="SPEZI"/>
+      <viewAttribute id="VBTYP"/>
+      <viewAttribute id="QUEUE"/>
+      <viewAttribute id="KGVNQ"/>
+      <viewAttribute id="TAPRI"/>
+      <viewAttribute id="KVQUI"/>
+      <viewAttribute id="HUCON"/>
+      <viewAttribute id="NOITM"/>
+      <viewAttribute id="KZTRM"/>
+      <viewAttribute id="LATER"/>
+      <viewAttribute id="PASSD"/>
+      <viewAttribute id="MULTL"/>
+      <viewAttribute id="VIAPDATU"/>
+      <viewAttribute id="VIAPZEIT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TOQuery_API.db.synonyms::LTAK"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3">
+    <viewAttributes>
+      <viewAttribute id="LGNUM"/>
+      <viewAttribute id="TBNUM"/>
+      <viewAttribute id="STATU"/>
+      <viewAttribute id="BDATUTR"/>
+      <viewAttribute id="BZEITTR"/>
+      <viewAttribute id="TBKTX"/>
+      <viewAttribute id="PDATU"/>
+      <viewAttribute id="PZEIT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TOQuery_API.db.synonyms::LTBK">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BDATUTR" source="BDATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BZEITTR" source="BZEIT"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="LGNUM"/>
+      <viewAttribute id="TANUM"/>
+      <viewAttribute id="BWART"/>
+      <viewAttribute id="BWLVS"/>
+      <viewAttribute id="TBPRI"/>
+      <viewAttribute id="TRART"/>
+      <viewAttribute id="BDATU"/>
+      <viewAttribute id="BZEIT"/>
+      <viewAttribute id="REFNR"/>
+      <viewAttribute id="TBNUM"/>
+      <viewAttribute id="UBNUM"/>
+      <viewAttribute id="VBELN"/>
+      <viewAttribute id="KQUIT"/>
+      <viewAttribute id="QDATU"/>
+      <viewAttribute id="MBLNR"/>
+      <viewAttribute id="MJAHR"/>
+      <viewAttribute id="BETYP"/>
+      <viewAttribute id="BENUM"/>
+      <viewAttribute id="DRUKZ"/>
+      <viewAttribute id="DRUCK"/>
+      <viewAttribute id="TEILK"/>
+      <viewAttribute id="KR2SO"/>
+      <viewAttribute id="KR2KU"/>
+      <viewAttribute id="KDISO"/>
+      <viewAttribute id="KZPLA"/>
+      <viewAttribute id="PLDAT"/>
+      <viewAttribute id="RSNUM"/>
+      <viewAttribute id="LZNUM"/>
+      <viewAttribute id="BDART"/>
+      <viewAttribute id="PKNUM"/>
+      <viewAttribute id="PKPOS"/>
+      <viewAttribute id="KZLEI"/>
+      <viewAttribute id="KISTZ"/>
+      <viewAttribute id="KISTP"/>
+      <viewAttribute id="PERNR"/>
+      <viewAttribute id="SOLWM"/>
+      <viewAttribute id="SOLEX"/>
+      <viewAttribute id="ISTWM"/>
+      <viewAttribute id="ZEIEI"/>
+      <viewAttribute id="HRSTS"/>
+      <viewAttribute id="STDAT"/>
+      <viewAttribute id="ENDAT"/>
+      <viewAttribute id="STUZT"/>
+      <viewAttribute id="ENUZT"/>
+      <viewAttribute id="L2SKA"/>
+      <viewAttribute id="MINWM"/>
+      <viewAttribute id="LGTOR"/>
+      <viewAttribute id="LGBZO"/>
+      <viewAttribute id="KZVEP"/>
+      <viewAttribute id="SWABW"/>
+      <viewAttribute id="AUSFB"/>
+      <viewAttribute id="SPEZI"/>
+      <viewAttribute id="VBTYP"/>
+      <viewAttribute id="QUEUE"/>
+      <viewAttribute id="KGVNQ"/>
+      <viewAttribute id="TAPRI"/>
+      <viewAttribute id="KVQUI"/>
+      <viewAttribute id="HUCON"/>
+      <viewAttribute id="NOITM"/>
+      <viewAttribute id="KZTRM"/>
+      <viewAttribute id="LATER"/>
+      <viewAttribute id="PASSD"/>
+      <viewAttribute id="MULTL"/>
+      <viewAttribute id="VIAPDATU"/>
+      <viewAttribute id="VIAPZEIT"/>
+      <viewAttribute id="STATU"/>
+      <viewAttribute id="BDATUTR"/>
+      <viewAttribute id="BZEITTR"/>
+      <viewAttribute id="TBKTX"/>
+      <viewAttribute id="PDATU"/>
+      <viewAttribute id="PZEIT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGNUM" source="LGNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TANUM" source="TANUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BWART" source="BWART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BWLVS" source="BWLVS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TBPRI" source="TBPRI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TRART" source="TRART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BDATU" source="BDATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BZEIT" source="BZEIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REFNR" source="REFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TBNUM" source="TBNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UBNUM" source="UBNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VBELN" source="VBELN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KQUIT" source="KQUIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QDATU" source="QDATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MBLNR" source="MBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MJAHR" source="MJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BETYP" source="BETYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BENUM" source="BENUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DRUKZ" source="DRUKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DRUCK" source="DRUCK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEILK" source="TEILK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KR2SO" source="KR2SO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KR2KU" source="KR2KU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDISO" source="KDISO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZPLA" source="KZPLA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLDAT" source="PLDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RSNUM" source="RSNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LZNUM" source="LZNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BDART" source="BDART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PKNUM" source="PKNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PKPOS" source="PKPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZLEI" source="KZLEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KISTZ" source="KISTZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KISTP" source="KISTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERNR" source="PERNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOLWM" source="SOLWM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOLEX" source="SOLEX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ISTWM" source="ISTWM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZEIEI" source="ZEIEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HRSTS" source="HRSTS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STDAT" source="STDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENDAT" source="ENDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STUZT" source="STUZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENUZT" source="ENUZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="L2SKA" source="L2SKA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MINWM" source="MINWM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGTOR" source="LGTOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGBZO" source="LGBZO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZVEP" source="KZVEP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWABW" source="SWABW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUSFB" source="AUSFB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPEZI" source="SPEZI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VBTYP" source="VBTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QUEUE" source="QUEUE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KGVNQ" source="KGVNQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TAPRI" source="TAPRI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KVQUI" source="KVQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HUCON" source="HUCON"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NOITM" source="NOITM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZTRM" source="KZTRM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LATER" source="LATER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PASSD" source="PASSD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MULTL" source="MULTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VIAPDATU" source="VIAPDATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VIAPZEIT" source="VIAPZEIT"/>
+    </input>
+    <input node="Projection_3">
+      <mapping xsi:type="Calculation:AttributeMapping" target="STATU" source="STATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BDATUTR" source="BDATUTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BZEITTR" source="BZEITTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TBKTX" source="TBKTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PDATU" source="PDATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PZEIT" source="PZEIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGNUM" source="LGNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TANUM" source="TBNUM"/>
+    </input>
+    <joinAttribute name="LGNUM"/>
+    <joinAttribute name="TANUM"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="LGNUM"/>
+      <viewAttribute id="TANUM"/>
+      <viewAttribute id="BWART"/>
+      <viewAttribute id="BWLVS"/>
+      <viewAttribute id="TBPRI"/>
+      <viewAttribute id="TRART"/>
+      <viewAttribute id="BDATU"/>
+      <viewAttribute id="BZEIT"/>
+      <viewAttribute id="REFNR"/>
+      <viewAttribute id="TBNUM"/>
+      <viewAttribute id="UBNUM"/>
+      <viewAttribute id="VBELN"/>
+      <viewAttribute id="KQUIT"/>
+      <viewAttribute id="QDATU"/>
+      <viewAttribute id="MBLNR"/>
+      <viewAttribute id="MJAHR"/>
+      <viewAttribute id="BETYP"/>
+      <viewAttribute id="BENUM"/>
+      <viewAttribute id="DRUKZ"/>
+      <viewAttribute id="DRUCK"/>
+      <viewAttribute id="TEILK"/>
+      <viewAttribute id="KR2SO"/>
+      <viewAttribute id="KR2KU"/>
+      <viewAttribute id="KDISO"/>
+      <viewAttribute id="KZPLA"/>
+      <viewAttribute id="PLDAT"/>
+      <viewAttribute id="RSNUM"/>
+      <viewAttribute id="LZNUM"/>
+      <viewAttribute id="BDART"/>
+      <viewAttribute id="PKNUM"/>
+      <viewAttribute id="PKPOS"/>
+      <viewAttribute id="KZLEI"/>
+      <viewAttribute id="KISTZ"/>
+      <viewAttribute id="KISTP"/>
+      <viewAttribute id="PERNR"/>
+      <viewAttribute id="SOLWM"/>
+      <viewAttribute id="SOLEX"/>
+      <viewAttribute id="ISTWM"/>
+      <viewAttribute id="ZEIEI"/>
+      <viewAttribute id="HRSTS"/>
+      <viewAttribute id="STDAT"/>
+      <viewAttribute id="ENDAT"/>
+      <viewAttribute id="STUZT"/>
+      <viewAttribute id="ENUZT"/>
+      <viewAttribute id="L2SKA"/>
+      <viewAttribute id="MINWM"/>
+      <viewAttribute id="LGTOR"/>
+      <viewAttribute id="LGBZO"/>
+      <viewAttribute id="KZVEP"/>
+      <viewAttribute id="SWABW"/>
+      <viewAttribute id="AUSFB"/>
+      <viewAttribute id="SPEZI"/>
+      <viewAttribute id="VBTYP"/>
+      <viewAttribute id="QUEUE"/>
+      <viewAttribute id="KGVNQ"/>
+      <viewAttribute id="TAPRI"/>
+      <viewAttribute id="KVQUI"/>
+      <viewAttribute id="HUCON"/>
+      <viewAttribute id="NOITM"/>
+      <viewAttribute id="KZTRM"/>
+      <viewAttribute id="LATER"/>
+      <viewAttribute id="PASSD"/>
+      <viewAttribute id="MULTL"/>
+      <viewAttribute id="VIAPDATU"/>
+      <viewAttribute id="VIAPZEIT"/>
+      <viewAttribute id="STATU"/>
+      <viewAttribute id="BDATUTR"/>
+      <viewAttribute id="BZEITTR"/>
+      <viewAttribute id="TBKTX"/>
+      <viewAttribute id="PDATU"/>
+      <viewAttribute id="PZEIT"/>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="GAMNG"/>
+      <viewAttribute id="GMEIN"/>
+      <viewAttribute id="PLNBEZ"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="FEVOR"/>
+      <viewAttribute id="CY_SEQNR"/>
+      <viewAttribute id="AUART"/>
+      <viewAttribute id="PSPEL"/>
+      <viewAttribute id="KDAUF"/>
+      <viewAttribute id="KDPOS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Join_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGNUM" source="LGNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TANUM" source="TANUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BWART" source="BWART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BWLVS" source="BWLVS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TBPRI" source="TBPRI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TRART" source="TRART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BDATU" source="BDATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BZEIT" source="BZEIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REFNR" source="REFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TBNUM" source="TBNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UBNUM" source="UBNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VBELN" source="VBELN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KQUIT" source="KQUIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QDATU" source="QDATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MBLNR" source="MBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MJAHR" source="MJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BETYP" source="BETYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BENUM" source="BENUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DRUKZ" source="DRUKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DRUCK" source="DRUCK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEILK" source="TEILK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KR2SO" source="KR2SO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KR2KU" source="KR2KU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDISO" source="KDISO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZPLA" source="KZPLA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLDAT" source="PLDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RSNUM" source="RSNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LZNUM" source="LZNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BDART" source="BDART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PKNUM" source="PKNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PKPOS" source="PKPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZLEI" source="KZLEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KISTZ" source="KISTZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KISTP" source="KISTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERNR" source="PERNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOLWM" source="SOLWM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOLEX" source="SOLEX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ISTWM" source="ISTWM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZEIEI" source="ZEIEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HRSTS" source="HRSTS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STDAT" source="STDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENDAT" source="ENDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STUZT" source="STUZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENUZT" source="ENUZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="L2SKA" source="L2SKA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MINWM" source="MINWM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGTOR" source="LGTOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGBZO" source="LGBZO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZVEP" source="KZVEP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWABW" source="SWABW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUSFB" source="AUSFB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPEZI" source="SPEZI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VBTYP" source="VBTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QUEUE" source="QUEUE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KGVNQ" source="KGVNQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TAPRI" source="TAPRI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KVQUI" source="KVQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HUCON" source="HUCON"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NOITM" source="NOITM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZTRM" source="KZTRM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LATER" source="LATER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PASSD" source="PASSD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MULTL" source="MULTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VIAPDATU" source="VIAPDATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VIAPZEIT" source="VIAPZEIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STATU" source="STATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BDATUTR" source="BDATUTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BZEITTR" source="BZEITTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TBKTX" source="TBKTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PDATU" source="PDATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PZEIT" source="PZEIT"/>
+    </input>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUFNR" source="AUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GAMNG" source="GAMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GMEIN" source="GMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLNBEZ" source="PLNBEZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DISPO" source="DISPO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FEVOR" source="FEVOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CY_SEQNR" source="CY_SEQNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUART" source="AUART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSPEL" source="PSPEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDAUF" source="KDAUF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDPOS" source="KDPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RSNUM" source="RSNUM"/>
+    </input>
+    <joinAttribute name="RSNUM"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Join_2">
+  <attributes>
+    <attribute id="LGNUM" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LGNUM"/>
+      <keyMapping columnObjectName="Join_2" columnName="LGNUM"/>
+    </attribute>
+    <attribute id="TANUM" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TANUM"/>
+      <keyMapping columnObjectName="Join_2" columnName="TANUM"/>
+    </attribute>
+    <attribute id="BWART" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BWART"/>
+      <keyMapping columnObjectName="Join_2" columnName="BWART"/>
+    </attribute>
+    <attribute id="BWLVS" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BWLVS"/>
+      <keyMapping columnObjectName="Join_2" columnName="BWLVS"/>
+    </attribute>
+    <attribute id="TBPRI" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TBPRI"/>
+      <keyMapping columnObjectName="Join_2" columnName="TBPRI"/>
+    </attribute>
+    <attribute id="TRART" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TRART"/>
+      <keyMapping columnObjectName="Join_2" columnName="TRART"/>
+    </attribute>
+    <attribute id="BDATU" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BDATU"/>
+      <keyMapping columnObjectName="Join_2" columnName="BDATU"/>
+    </attribute>
+    <attribute id="BZEIT" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BZEIT"/>
+      <keyMapping columnObjectName="Join_2" columnName="BZEIT"/>
+    </attribute>
+    <attribute id="REFNR" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="REFNR"/>
+      <keyMapping columnObjectName="Join_2" columnName="REFNR"/>
+    </attribute>
+    <attribute id="TBNUM" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TBNUM"/>
+      <keyMapping columnObjectName="Join_2" columnName="TBNUM"/>
+    </attribute>
+    <attribute id="UBNUM" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="UBNUM"/>
+      <keyMapping columnObjectName="Join_2" columnName="UBNUM"/>
+    </attribute>
+    <attribute id="VBELN" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VBELN"/>
+      <keyMapping columnObjectName="Join_2" columnName="VBELN"/>
+    </attribute>
+    <attribute id="KQUIT" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KQUIT"/>
+      <keyMapping columnObjectName="Join_2" columnName="KQUIT"/>
+    </attribute>
+    <attribute id="QDATU" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="QDATU"/>
+      <keyMapping columnObjectName="Join_2" columnName="QDATU"/>
+    </attribute>
+    <attribute id="MBLNR" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MBLNR"/>
+      <keyMapping columnObjectName="Join_2" columnName="MBLNR"/>
+    </attribute>
+    <attribute id="MJAHR" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MJAHR"/>
+      <keyMapping columnObjectName="Join_2" columnName="MJAHR"/>
+    </attribute>
+    <attribute id="BETYP" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BETYP"/>
+      <keyMapping columnObjectName="Join_2" columnName="BETYP"/>
+    </attribute>
+    <attribute id="BENUM" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BENUM"/>
+      <keyMapping columnObjectName="Join_2" columnName="BENUM"/>
+    </attribute>
+    <attribute id="DRUKZ" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DRUKZ"/>
+      <keyMapping columnObjectName="Join_2" columnName="DRUKZ"/>
+    </attribute>
+    <attribute id="DRUCK" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DRUCK"/>
+      <keyMapping columnObjectName="Join_2" columnName="DRUCK"/>
+    </attribute>
+    <attribute id="TEILK" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TEILK"/>
+      <keyMapping columnObjectName="Join_2" columnName="TEILK"/>
+    </attribute>
+    <attribute id="KR2SO" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KR2SO"/>
+      <keyMapping columnObjectName="Join_2" columnName="KR2SO"/>
+    </attribute>
+    <attribute id="KR2KU" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KR2KU"/>
+      <keyMapping columnObjectName="Join_2" columnName="KR2KU"/>
+    </attribute>
+    <attribute id="KDISO" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KDISO"/>
+      <keyMapping columnObjectName="Join_2" columnName="KDISO"/>
+    </attribute>
+    <attribute id="KZPLA" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KZPLA"/>
+      <keyMapping columnObjectName="Join_2" columnName="KZPLA"/>
+    </attribute>
+    <attribute id="PLDAT" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PLDAT"/>
+      <keyMapping columnObjectName="Join_2" columnName="PLDAT"/>
+    </attribute>
+    <attribute id="RSNUM" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RSNUM"/>
+      <keyMapping columnObjectName="Join_2" columnName="RSNUM"/>
+    </attribute>
+    <attribute id="LZNUM" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LZNUM"/>
+      <keyMapping columnObjectName="Join_2" columnName="LZNUM"/>
+    </attribute>
+    <attribute id="BDART" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BDART"/>
+      <keyMapping columnObjectName="Join_2" columnName="BDART"/>
+    </attribute>
+    <attribute id="PKNUM" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PKNUM"/>
+      <keyMapping columnObjectName="Join_2" columnName="PKNUM"/>
+    </attribute>
+    <attribute id="PKPOS" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PKPOS"/>
+      <keyMapping columnObjectName="Join_2" columnName="PKPOS"/>
+    </attribute>
+    <attribute id="KZLEI" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KZLEI"/>
+      <keyMapping columnObjectName="Join_2" columnName="KZLEI"/>
+    </attribute>
+    <attribute id="KISTZ" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KISTZ"/>
+      <keyMapping columnObjectName="Join_2" columnName="KISTZ"/>
+    </attribute>
+    <attribute id="KISTP" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KISTP"/>
+      <keyMapping columnObjectName="Join_2" columnName="KISTP"/>
+    </attribute>
+    <attribute id="PERNR" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PERNR"/>
+      <keyMapping columnObjectName="Join_2" columnName="PERNR"/>
+    </attribute>
+    <attribute id="SOLWM" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SOLWM"/>
+      <keyMapping columnObjectName="Join_2" columnName="SOLWM"/>
+    </attribute>
+    <attribute id="SOLEX" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SOLEX"/>
+      <keyMapping columnObjectName="Join_2" columnName="SOLEX"/>
+    </attribute>
+    <attribute id="ISTWM" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ISTWM"/>
+      <keyMapping columnObjectName="Join_2" columnName="ISTWM"/>
+    </attribute>
+    <attribute id="ZEIEI" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZEIEI"/>
+      <keyMapping columnObjectName="Join_2" columnName="ZEIEI"/>
+    </attribute>
+    <attribute id="HRSTS" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HRSTS"/>
+      <keyMapping columnObjectName="Join_2" columnName="HRSTS"/>
+    </attribute>
+    <attribute id="STDAT" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STDAT"/>
+      <keyMapping columnObjectName="Join_2" columnName="STDAT"/>
+    </attribute>
+    <attribute id="ENDAT" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ENDAT"/>
+      <keyMapping columnObjectName="Join_2" columnName="ENDAT"/>
+    </attribute>
+    <attribute id="STUZT" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STUZT"/>
+      <keyMapping columnObjectName="Join_2" columnName="STUZT"/>
+    </attribute>
+    <attribute id="ENUZT" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ENUZT"/>
+      <keyMapping columnObjectName="Join_2" columnName="ENUZT"/>
+    </attribute>
+    <attribute id="L2SKA" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="L2SKA"/>
+      <keyMapping columnObjectName="Join_2" columnName="L2SKA"/>
+    </attribute>
+    <attribute id="MINWM" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MINWM"/>
+      <keyMapping columnObjectName="Join_2" columnName="MINWM"/>
+    </attribute>
+    <attribute id="LGTOR" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LGTOR"/>
+      <keyMapping columnObjectName="Join_2" columnName="LGTOR"/>
+    </attribute>
+    <attribute id="LGBZO" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LGBZO"/>
+      <keyMapping columnObjectName="Join_2" columnName="LGBZO"/>
+    </attribute>
+    <attribute id="KZVEP" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KZVEP"/>
+      <keyMapping columnObjectName="Join_2" columnName="KZVEP"/>
+    </attribute>
+    <attribute id="SWABW" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SWABW"/>
+      <keyMapping columnObjectName="Join_2" columnName="SWABW"/>
+    </attribute>
+    <attribute id="AUSFB" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AUSFB"/>
+      <keyMapping columnObjectName="Join_2" columnName="AUSFB"/>
+    </attribute>
+    <attribute id="SPEZI" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPEZI"/>
+      <keyMapping columnObjectName="Join_2" columnName="SPEZI"/>
+    </attribute>
+    <attribute id="VBTYP" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VBTYP"/>
+      <keyMapping columnObjectName="Join_2" columnName="VBTYP"/>
+    </attribute>
+    <attribute id="QUEUE" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="QUEUE"/>
+      <keyMapping columnObjectName="Join_2" columnName="QUEUE"/>
+    </attribute>
+    <attribute id="KGVNQ" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KGVNQ"/>
+      <keyMapping columnObjectName="Join_2" columnName="KGVNQ"/>
+    </attribute>
+    <attribute id="TAPRI" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TAPRI"/>
+      <keyMapping columnObjectName="Join_2" columnName="TAPRI"/>
+    </attribute>
+    <attribute id="KVQUI" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KVQUI"/>
+      <keyMapping columnObjectName="Join_2" columnName="KVQUI"/>
+    </attribute>
+    <attribute id="HUCON" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HUCON"/>
+      <keyMapping columnObjectName="Join_2" columnName="HUCON"/>
+    </attribute>
+    <attribute id="NOITM" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NOITM"/>
+      <keyMapping columnObjectName="Join_2" columnName="NOITM"/>
+    </attribute>
+    <attribute id="KZTRM" order="60" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KZTRM"/>
+      <keyMapping columnObjectName="Join_2" columnName="KZTRM"/>
+    </attribute>
+    <attribute id="LATER" order="61" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LATER"/>
+      <keyMapping columnObjectName="Join_2" columnName="LATER"/>
+    </attribute>
+    <attribute id="PASSD" order="62" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PASSD"/>
+      <keyMapping columnObjectName="Join_2" columnName="PASSD"/>
+    </attribute>
+    <attribute id="MULTL" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MULTL"/>
+      <keyMapping columnObjectName="Join_2" columnName="MULTL"/>
+    </attribute>
+    <attribute id="VIAPDATU" order="64" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VIAPDATU"/>
+      <keyMapping columnObjectName="Join_2" columnName="VIAPDATU"/>
+    </attribute>
+    <attribute id="VIAPZEIT" order="65" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VIAPZEIT"/>
+      <keyMapping columnObjectName="Join_2" columnName="VIAPZEIT"/>
+    </attribute>
+    <attribute id="STATU" order="66" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STATU"/>
+      <keyMapping columnObjectName="Join_2" columnName="STATU"/>
+    </attribute>
+    <attribute id="BDATUTR" order="67" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BDATU"/>
+      <keyMapping columnObjectName="Join_2" columnName="BDATUTR"/>
+    </attribute>
+    <attribute id="BZEITTR" order="68" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BZEIT"/>
+      <keyMapping columnObjectName="Join_2" columnName="BZEITTR"/>
+    </attribute>
+    <attribute id="TBKTX" order="69" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TBKTX"/>
+      <keyMapping columnObjectName="Join_2" columnName="TBKTX"/>
+    </attribute>
+    <attribute id="PDATU" order="70" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PDATU"/>
+      <keyMapping columnObjectName="Join_2" columnName="PDATU"/>
+    </attribute>
+    <attribute id="PZEIT" order="71" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PZEIT"/>
+      <keyMapping columnObjectName="Join_2" columnName="PZEIT"/>
+    </attribute>
+    <attribute id="AUFNR" order="72" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AUFNR"/>
+      <keyMapping columnObjectName="Join_2" columnName="AUFNR"/>
+    </attribute>
+    <attribute id="GAMNG" order="73" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GAMNG"/>
+      <keyMapping columnObjectName="Join_2" columnName="GAMNG"/>
+    </attribute>
+    <attribute id="GMEIN" order="74" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GMEIN"/>
+      <keyMapping columnObjectName="Join_2" columnName="GMEIN"/>
+    </attribute>
+    <attribute id="PLNBEZ" order="75" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PLNBEZ"/>
+      <keyMapping columnObjectName="Join_2" columnName="PLNBEZ"/>
+    </attribute>
+    <attribute id="DISPO" order="76" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DISPO"/>
+      <keyMapping columnObjectName="Join_2" columnName="DISPO"/>
+    </attribute>
+    <attribute id="FEVOR" order="77" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FEVOR"/>
+      <keyMapping columnObjectName="Join_2" columnName="FEVOR"/>
+    </attribute>
+    <attribute id="CY_SEQNR" order="78" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CY_SEQNR"/>
+      <keyMapping columnObjectName="Join_2" columnName="CY_SEQNR"/>
+    </attribute>
+    <attribute id="AUART" order="79" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AUART"/>
+      <keyMapping columnObjectName="Join_2" columnName="AUART"/>
+    </attribute>
+    <attribute id="PSPEL" order="80" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PSPEL"/>
+      <keyMapping columnObjectName="Join_2" columnName="PSPEL"/>
+    </attribute>
+    <attribute id="KDAUF" order="81" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KDAUF"/>
+      <keyMapping columnObjectName="Join_2" columnName="KDAUF"/>
+    </attribute>
+    <attribute id="KDPOS" order="82" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KDPOS"/>
+      <keyMapping columnObjectName="Join_2" columnName="KDPOS"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="328.6900820831794" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="395.83468516943316" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="536.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="536.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118.66666666666663" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="136.0234375"/>
+    </shape>
+    <shape modelObjectName="Projection_3" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="137.12744140625"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="328.6900820831794" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="131.33154296875"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="620" y="30"/>
+      <rectangleSize width="146.51611328125"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

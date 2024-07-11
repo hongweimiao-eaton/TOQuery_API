@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="db.models::OrderData" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="OrderData"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="TOQuery_API.db.synonyms::AFKO">
+    <resourceUri>TOQuery_API.db.synonyms::AFKO</resourceUri>
+  </DataSource>
+  <DataSource id="TOQuery_API.db.synonyms::AUFK">
+    <resourceUri>TOQuery_API.db.synonyms::AUFK</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="GAMNG"/>
+      <viewAttribute id="GMEIN"/>
+      <viewAttribute id="PLNBEZ"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="FEVOR"/>
+      <viewAttribute id="CY_SEQNR"/>
+      <viewAttribute id="RSNUM"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TOQuery_API.db.synonyms::AFKO"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="AUART"/>
+      <viewAttribute id="PSPEL"/>
+      <viewAttribute id="KDAUF"/>
+      <viewAttribute id="KDPOS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TOQuery_API.db.synonyms::AUFK"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="GAMNG"/>
+      <viewAttribute id="GMEIN"/>
+      <viewAttribute id="PLNBEZ"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="FEVOR"/>
+      <viewAttribute id="CY_SEQNR"/>
+      <viewAttribute id="AUART"/>
+      <viewAttribute id="PSPEL"/>
+      <viewAttribute id="KDAUF"/>
+      <viewAttribute id="KDPOS"/>
+      <viewAttribute id="RSNUM"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUFNR" source="AUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GAMNG" source="GAMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GMEIN" source="GMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLNBEZ" source="PLNBEZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DISPO" source="DISPO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FEVOR" source="FEVOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CY_SEQNR" source="CY_SEQNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RSNUM" source="RSNUM"/>
+    </input>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUART" source="AUART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSPEL" source="PSPEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDAUF" source="KDAUF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDPOS" source="KDPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUFNR" source="AUFNR"/>
+    </input>
+    <joinAttribute name="AUFNR"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Join_1">
+  <attributes>
+    <attribute id="AUFNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AUFNR"/>
+      <keyMapping columnObjectName="Join_1" columnName="AUFNR"/>
+    </attribute>
+    <attribute id="GAMNG" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GAMNG"/>
+      <keyMapping columnObjectName="Join_1" columnName="GAMNG"/>
+    </attribute>
+    <attribute id="GMEIN" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GMEIN"/>
+      <keyMapping columnObjectName="Join_1" columnName="GMEIN"/>
+    </attribute>
+    <attribute id="PLNBEZ" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PLNBEZ"/>
+      <keyMapping columnObjectName="Join_1" columnName="PLNBEZ"/>
+    </attribute>
+    <attribute id="DISPO" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DISPO"/>
+      <keyMapping columnObjectName="Join_1" columnName="DISPO"/>
+    </attribute>
+    <attribute id="FEVOR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FEVOR"/>
+      <keyMapping columnObjectName="Join_1" columnName="FEVOR"/>
+    </attribute>
+    <attribute id="CY_SEQNR" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CY_SEQNR"/>
+      <keyMapping columnObjectName="Join_1" columnName="CY_SEQNR"/>
+    </attribute>
+    <attribute id="AUART" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AUART"/>
+      <keyMapping columnObjectName="Join_1" columnName="AUART"/>
+    </attribute>
+    <attribute id="PSPEL" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PSPEL"/>
+      <keyMapping columnObjectName="Join_1" columnName="PSPEL"/>
+    </attribute>
+    <attribute id="KDAUF" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KDAUF"/>
+      <keyMapping columnObjectName="Join_1" columnName="KDAUF"/>
+    </attribute>
+    <attribute id="KDPOS" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KDPOS"/>
+      <keyMapping columnObjectName="Join_1" columnName="KDPOS"/>
+    </attribute>
+    <attribute id="RSNUM" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RSNUM"/>
+      <keyMapping columnObjectName="Join_1" columnName="RSNUM"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="91" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-68" y="362"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="186" y="379"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="44" y="233"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="146"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
