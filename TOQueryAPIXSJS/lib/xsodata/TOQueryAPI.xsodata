@@ -1,10 +1,17 @@
 service {
-    "db.models::TOQueryAPI_Header.TOHeader" as "TOHeader" key("Lgnum", "Tanum")
-	   navigates ("TOItem" as "TOItem");
+    "db.models::TOQueryAPI_Header.TOHeader" as "TransferOrderHeadSet" key("Lgnum", "Tanum")
+	   navigates ("TransferOrderItemSet" as "to_item");
 
 	"db.models::TOQueryAPI_Item.TOItem"
-	  as "TOItem" key("Lgnum", "Tanum");
+	  as "TransferOrderItemSet" key("Lgnum", "Tanum");
 
-	association "TOItem" principal  "TOHeader"("Lgnum", "Tanum")
-	multiplicity "1" dependent "TOItem"("Lgnum", "Tanum") multiplicity "*";
+	association "TransferOrderItemSet" principal  "TransferOrderHeadSet"("Lgnum", "Tanum")
+	multiplicity "1" dependent "TransferOrderItemSet"("Lgnum", "Tanum") multiplicity "*";
+}
+settings {
+  content cache-control "no-store";
+  metadata cache-control "max-age=86401,must-revalidate";
+  limits
+	max_records = 10000,
+    max_expanded_records = 1000000;
 }
