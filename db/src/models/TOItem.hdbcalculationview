@@ -10,6 +10,9 @@
   <DataSource id="TOQuery_API.db.synonyms::LTBP">
     <resourceUri>TOQuery_API.db.synonyms::LTBP</resourceUri>
   </DataSource>
+  <DataSource id="TOQuery_API.db.synonyms::LTAK">
+    <resourceUri>TOQuery_API.db.synonyms::LTAK</resourceUri>
+  </DataSource>
 </dataSources>
 <calculationViews>
   <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3">
@@ -179,18 +182,19 @@
   <calculationView xsi:type="Calculation:ProjectionView" id="Projection_4">
     <viewAttributes>
       <viewAttribute id="LGNUM"/>
-      <viewAttribute id="TBNUM"/>
       <viewAttribute id="TBPOS"/>
       <viewAttribute id="ELIKZ"/>
       <viewAttribute id="MENGA"/>
       <viewAttribute id="TAMEA"/>
       <viewAttribute id="AOFTA"/>
       <viewAttribute id="AGSTA"/>
+    
+      <viewAttribute id="TBNUM"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="TOQuery_API.db.synonyms::LTBP"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="C1_1" joinType="leftOuter" optimizeJoinColumns="false">
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="C1_1" joinType="leftOuter">
     <viewAttributes>
       <viewAttribute id="LGNUM"/>
       <viewAttribute id="TANUM"/>
@@ -355,6 +359,358 @@
       <viewAttribute id="TAMEA"/>
       <viewAttribute id="AOFTA"/>
       <viewAttribute id="AGSTA"/>
+      <viewAttribute hidden="true" id="JOIN$LGNUM$LGNUM"/>
+      <viewAttribute hidden="true" id="JOIN$TBPOS$TAPOS"/>
+      <viewAttribute hidden="true" id="JOIN$TBNUM$TBNUM"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_4">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ELIKZ" source="ELIKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MENGA" source="MENGA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TAMEA" source="TAMEA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AOFTA" source="AOFTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AGSTA" source="AGSTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LGNUM$LGNUM" source="LGNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$TBPOS$TAPOS" source="TBPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$TBNUM$TBNUM" source="TBNUM"/>
+    </input>
+    <input node="Join_3">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGNUM" source="LGNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TANUM" source="TANUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TAPOS" source="TAPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TBPOS" source="TBPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CHARG" source="CHARG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BESTQ" source="BESTQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOBKZ" source="SOBKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SONUM" source="SONUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STOFF" source="STOFF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALTME" source="ALTME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UMREZ" source="UMREZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UMREN" source="UMREN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LETYP" source="LETYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZFEH" source="KZFEH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LANUM" source="LANUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZQUI" source="KZQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZNKO" source="KZNKO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NULKO" source="NULKO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZINV" source="KZINV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IVNUM" source="IVNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PQUIT" source="PQUIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QDATU" source="QDATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QZEIT" source="QZEIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MBPOS" source="MBPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEMPF" source="WEMPF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABLAD" source="ABLAD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WDATU" source="WDATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WENUM" source="WENUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEPOS" source="WEPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZEUGN" source="ZEUGN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LDEST" source="LDEST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VORGA" source="VORGA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VLTYP" source="VLTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VLBER" source="VLBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VLPLA" source="VLPLA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKDYN" source="VKDYN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VPPOS" source="VPPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VANZL" source="VANZL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VANBR" source="VANBR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VSOLM" source="VSOLM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VISTM" source="VISTM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VDIFM" source="VDIFM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VSOLA" source="VSOLA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VISTA" source="VISTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VDIFA" source="VDIFA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VLQNR" source="VLQNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VAPPC" source="VAPPC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLTYP" source="NLTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLBER" source="NLBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLPLA" source="NLPLA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NKDYN" source="NKDYN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NPPOS" source="NPPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NANZL" source="NANZL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NANBR" source="NANBR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NSOLM" source="NSOLM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NISTM" source="NISTM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NDIFM" source="NDIFM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NSOLA" source="NSOLA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NISTA" source="NISTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NDIFA" source="NDIFA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLQNR" source="NLQNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAPPC" source="NAPPC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RLTYP" source="RLTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RLBER" source="RLBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RLPLA" source="RLPLA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RPPOS" source="RPPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RSOLM" source="RSOLM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RISTM" source="RISTM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RDIFM" source="RDIFM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RSOLA" source="RSOLA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RISTA" source="RISTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RDIFA" source="RDIFA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RLQNR" source="RLQNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RAPPC" source="RAPPC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DLTYP" source="DLTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DLPLA" source="DLPLA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DLQNR" source="DLQNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DMENG" source="DMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DMENA" source="DMENA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZDIF" source="KZDIF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX" source="MAKTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DRUCK" source="DRUCK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VLENR" source="VLENR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLENR" source="NLENR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DLENR" source="DLENR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VLEST" source="VLEST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLEST" source="NLEST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LELAS" source="LELAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HOMVE" source="HOMVE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSTY" source="POSTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORPOS" source="ORPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VSUMM" source="VSUMM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VBLCH" source="VBLCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NSUMM" source="NSUMM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NBLCH" source="NBLCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RSPOS" source="RSPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VFDAT" source="VFDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKAPV" source="VKAPV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKAPA" source="VKAPA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NKAPA" source="NKAPA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RKAPA" source="RKAPA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZSUB" source="KZSUB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QPLOS" source="QPLOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QPLOA" source="QPLOA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZSTI" source="KZSTI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RSART" source="RSART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZECH" source="KZECH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOBER" source="KOBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOLPO" source="SOLPO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZEIEI" source="ZEIEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="L2SKR" source="L2SKR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VOLUM" source="VOLUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VOLEH" source="VOLEH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZBEF" source="KZBEF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IMREL" source="IMREL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NWIRM" source="NWIRM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WIRME" source="WIRME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NPLEI" source="NPLEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KBNKZ" source="KBNKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STOAN" source="STOAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KGVNQ" source="KGVNQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PVQUI" source="PVQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EDATU" source="EDATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EZEIT" source="EZEIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZFME" source="KZFME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QUSUB" source="QUSUB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FHUTA" source="FHUTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VNEST" source="VNEST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VHILM" source="VHILM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VDUMM" source="VDUMM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NDUMM" source="NDUMM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VSERI" source="VSERI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HUPIK" source="HUPIK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NXIDV" source="NXIDV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NOLIS" source="NOLIS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NPIPO" source="NPIPO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIPAR" source="PIPAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PCKPF" source="PCKPF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZTRM" source="KZTRM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PASSD" source="PASSD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VBELN" source="VBELN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZXDK" source="KZXDK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZVAS" source="KZVAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FROM_INSP_GUID" source="FROM_INSP_GUID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TO_INSP_GUID" source="TO_INSP_GUID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DIFF_INSP_GUID" source="DIFF_INSP_GUID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RETURN_INSP_GUID" source="RETURN_INSP_GUID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DCNUM" source="DCNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZRSTG" source="ZRSTG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOVAS" source="TOVAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SGT_SCAT" source="SGT_SCAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LGNUM$LGNUM" source="LGNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$TBPOS$TAPOS" source="TAPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$TBNUM$TBNUM" source="TBNUM"/>
+    </input>
+    <joinAttribute name="JOIN$LGNUM$LGNUM"/>
+    <joinAttribute name="JOIN$TBPOS$TAPOS"/>
+    <joinAttribute name="JOIN$TBNUM$TBNUM"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_5">
+    <viewAttributes>
+      <viewAttribute id="LGNUM"/>
+      <viewAttribute id="TANUM"/>
+      <viewAttribute id="TBNUM"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TOQuery_API.db.synonyms::LTAK"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_3" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="LGNUM"/>
+      <viewAttribute id="TANUM"/>
+      <viewAttribute id="TAPOS"/>
+      <viewAttribute id="TBPOS"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="CHARG"/>
+      <viewAttribute id="BESTQ"/>
+      <viewAttribute id="SOBKZ"/>
+      <viewAttribute id="SONUM"/>
+      <viewAttribute id="STOFF"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="ALTME"/>
+      <viewAttribute id="UMREZ"/>
+      <viewAttribute id="UMREN"/>
+      <viewAttribute id="LETYP"/>
+      <viewAttribute id="KZFEH"/>
+      <viewAttribute id="LANUM"/>
+      <viewAttribute id="KZQUI"/>
+      <viewAttribute id="KZNKO"/>
+      <viewAttribute id="NULKO"/>
+      <viewAttribute id="KZINV"/>
+      <viewAttribute id="IVNUM"/>
+      <viewAttribute id="PQUIT"/>
+      <viewAttribute id="QDATU"/>
+      <viewAttribute id="QZEIT"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MBPOS"/>
+      <viewAttribute id="WEMPF"/>
+      <viewAttribute id="ABLAD"/>
+      <viewAttribute id="WDATU"/>
+      <viewAttribute id="WENUM"/>
+      <viewAttribute id="WEPOS"/>
+      <viewAttribute id="ZEUGN"/>
+      <viewAttribute id="LDEST"/>
+      <viewAttribute id="VORGA"/>
+      <viewAttribute id="VLTYP"/>
+      <viewAttribute id="VLBER"/>
+      <viewAttribute id="VLPLA"/>
+      <viewAttribute id="VKDYN"/>
+      <viewAttribute id="VPPOS"/>
+      <viewAttribute id="VANZL"/>
+      <viewAttribute id="VANBR"/>
+      <viewAttribute id="VSOLM"/>
+      <viewAttribute id="VISTM"/>
+      <viewAttribute id="VDIFM"/>
+      <viewAttribute id="VSOLA"/>
+      <viewAttribute id="VISTA"/>
+      <viewAttribute id="VDIFA"/>
+      <viewAttribute id="VLQNR"/>
+      <viewAttribute id="VAPPC"/>
+      <viewAttribute id="NLTYP"/>
+      <viewAttribute id="NLBER"/>
+      <viewAttribute id="NLPLA"/>
+      <viewAttribute id="NKDYN"/>
+      <viewAttribute id="NPPOS"/>
+      <viewAttribute id="NANZL"/>
+      <viewAttribute id="NANBR"/>
+      <viewAttribute id="NSOLM"/>
+      <viewAttribute id="NISTM"/>
+      <viewAttribute id="NDIFM"/>
+      <viewAttribute id="NSOLA"/>
+      <viewAttribute id="NISTA"/>
+      <viewAttribute id="NDIFA"/>
+      <viewAttribute id="NLQNR"/>
+      <viewAttribute id="NAPPC"/>
+      <viewAttribute id="RLTYP"/>
+      <viewAttribute id="RLBER"/>
+      <viewAttribute id="RLPLA"/>
+      <viewAttribute id="RPPOS"/>
+      <viewAttribute id="RSOLM"/>
+      <viewAttribute id="RISTM"/>
+      <viewAttribute id="RDIFM"/>
+      <viewAttribute id="RSOLA"/>
+      <viewAttribute id="RISTA"/>
+      <viewAttribute id="RDIFA"/>
+      <viewAttribute id="RLQNR"/>
+      <viewAttribute id="RAPPC"/>
+      <viewAttribute id="DLTYP"/>
+      <viewAttribute id="DLPLA"/>
+      <viewAttribute id="DLQNR"/>
+      <viewAttribute id="DMENG"/>
+      <viewAttribute id="DMENA"/>
+      <viewAttribute id="KZDIF"/>
+      <viewAttribute id="MAKTX"/>
+      <viewAttribute id="DRUCK"/>
+      <viewAttribute id="VLENR"/>
+      <viewAttribute id="NLENR"/>
+      <viewAttribute id="DLENR"/>
+      <viewAttribute id="VLEST"/>
+      <viewAttribute id="NLEST"/>
+      <viewAttribute id="LELAS"/>
+      <viewAttribute id="HOMVE"/>
+      <viewAttribute id="POSTY"/>
+      <viewAttribute id="ORPOS"/>
+      <viewAttribute id="VSUMM"/>
+      <viewAttribute id="VBLCH"/>
+      <viewAttribute id="NSUMM"/>
+      <viewAttribute id="NBLCH"/>
+      <viewAttribute id="RSPOS"/>
+      <viewAttribute id="VFDAT"/>
+      <viewAttribute id="VKAPV"/>
+      <viewAttribute id="VKAPA"/>
+      <viewAttribute id="NKAPA"/>
+      <viewAttribute id="RKAPA"/>
+      <viewAttribute id="KZSUB"/>
+      <viewAttribute id="QPLOS"/>
+      <viewAttribute id="QPLOA"/>
+      <viewAttribute id="KZSTI"/>
+      <viewAttribute id="RSART"/>
+      <viewAttribute id="KZECH"/>
+      <viewAttribute id="KOBER"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="SOLPO"/>
+      <viewAttribute id="ZEIEI"/>
+      <viewAttribute id="L2SKR"/>
+      <viewAttribute id="VOLUM"/>
+      <viewAttribute id="VOLEH"/>
+      <viewAttribute id="KZBEF"/>
+      <viewAttribute id="IMREL"/>
+      <viewAttribute id="NWIRM"/>
+      <viewAttribute id="WIRME"/>
+      <viewAttribute id="NPLEI"/>
+      <viewAttribute id="KBNKZ"/>
+      <viewAttribute id="STOAN"/>
+      <viewAttribute id="KGVNQ"/>
+      <viewAttribute id="PVQUI"/>
+      <viewAttribute id="EDATU"/>
+      <viewAttribute id="EZEIT"/>
+      <viewAttribute id="KZFME"/>
+      <viewAttribute id="QUSUB"/>
+      <viewAttribute id="FHUTA"/>
+      <viewAttribute id="VNEST"/>
+      <viewAttribute id="VHILM"/>
+      <viewAttribute id="VDUMM"/>
+      <viewAttribute id="NDUMM"/>
+      <viewAttribute id="VSERI"/>
+      <viewAttribute id="HUPIK"/>
+      <viewAttribute id="NXIDV"/>
+      <viewAttribute id="NOLIS"/>
+      <viewAttribute id="NPIPO"/>
+      <viewAttribute id="PIPAR"/>
+      <viewAttribute id="PCKPF"/>
+      <viewAttribute id="KZTRM"/>
+      <viewAttribute id="PASSD"/>
+      <viewAttribute id="VBELN"/>
+      <viewAttribute id="KZXDK"/>
+      <viewAttribute id="KZVAS"/>
+      <viewAttribute id="FROM_INSP_GUID"/>
+      <viewAttribute id="TO_INSP_GUID"/>
+      <viewAttribute id="DIFF_INSP_GUID"/>
+      <viewAttribute id="RETURN_INSP_GUID"/>
+      <viewAttribute id="DCNUM"/>
+      <viewAttribute id="ZRSTG"/>
+      <viewAttribute id="TOVAS"/>
+      <viewAttribute id="SGT_SCAT"/>
+      <viewAttribute id="TBNUM"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="Projection_3">
@@ -517,19 +873,13 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="TOVAS" source="TOVAS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="SGT_SCAT" source="SGT_SCAT"/>
     </input>
-    <input node="Projection_4">
-      <mapping xsi:type="Calculation:AttributeMapping" target="ELIKZ" source="ELIKZ"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MENGA" source="MENGA"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="TAMEA" source="TAMEA"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="AOFTA" source="AOFTA"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="AGSTA" source="AGSTA"/>
+    <input node="Projection_5">
+      <mapping xsi:type="Calculation:AttributeMapping" target="TBNUM" source="TBNUM"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="LGNUM" source="LGNUM"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="TANUM" source="TBNUM"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="TBPOS" source="TBPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TANUM" source="TANUM"/>
     </input>
     <joinAttribute name="LGNUM"/>
     <joinAttribute name="TANUM"/>
-    <joinAttribute name="TBPOS"/>
   </calculationView>
 </calculationViews>
 <logicalModel id="Join_2">
@@ -1201,7 +1551,7 @@
     </shape>
   
     <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="92" y="376"/>
+      <upperLeftCorner x="113" y="438"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="Projection_4" modelObjectNameSpace="CalculationView">
@@ -1212,13 +1562,30 @@
       <upperLeftCorner x="221" y="217"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape modelObjectName="Projection_3" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="22" y="22"/>
-      <rectangleSize width="136"/>
-    </shape>
     <shape modelObjectName="Projection_4" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="320" y="30"/>
       <rectangleSize width="136"/>
+    </shape>
+  
+    <shape modelObjectName="Join_3" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="86" y="30"/>
+      <rectangleSize width="126.94384765625"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_5" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-106" y="455"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-17" y="346"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_3" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="136.0234375"/>
+    </shape>
+    <shape modelObjectName="Projection_5" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136.0234375"/>
     </shape>
   </shapes>
 </layout>
