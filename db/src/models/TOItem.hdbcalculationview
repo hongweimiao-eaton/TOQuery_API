@@ -359,21 +359,9 @@
       <viewAttribute id="TAMEA"/>
       <viewAttribute id="AOFTA"/>
       <viewAttribute id="AGSTA"/>
-      <viewAttribute hidden="true" id="JOIN$LGNUM$LGNUM"/>
-      <viewAttribute hidden="true" id="JOIN$TBPOS$TAPOS"/>
       <viewAttribute hidden="true" id="JOIN$TBNUM$TBNUM"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="Projection_4">
-      <mapping xsi:type="Calculation:AttributeMapping" target="ELIKZ" source="ELIKZ"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MENGA" source="MENGA"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="TAMEA" source="TAMEA"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="AOFTA" source="AOFTA"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="AGSTA" source="AGSTA"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LGNUM$LGNUM" source="LGNUM"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$TBPOS$TAPOS" source="TBPOS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$TBNUM$TBNUM" source="TBNUM"/>
-    </input>
     <input node="Join_3">
       <mapping xsi:type="Calculation:AttributeMapping" target="LGNUM" source="LGNUM"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="TANUM" source="TANUM"/>
@@ -533,22 +521,21 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="ZRSTG" source="ZRSTG"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="TOVAS" source="TOVAS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="SGT_SCAT" source="SGT_SCAT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LGNUM$LGNUM" source="LGNUM"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$TBPOS$TAPOS" source="TAPOS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$TBNUM$TBNUM" source="TBNUM"/>
     </input>
-    <joinAttribute name="JOIN$LGNUM$LGNUM"/>
-    <joinAttribute name="JOIN$TBPOS$TAPOS"/>
+    <input node="Projection_4">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ELIKZ" source="ELIKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MENGA" source="MENGA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TAMEA" source="TAMEA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AOFTA" source="AOFTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AGSTA" source="AGSTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGNUM" source="LGNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TAPOS" source="TBPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$TBNUM$TBNUM" source="TBNUM"/>
+    </input>
+    <joinAttribute name="LGNUM"/>
+    <joinAttribute name="TAPOS"/>
     <joinAttribute name="JOIN$TBNUM$TBNUM"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_5">
-    <viewAttributes>
-      <viewAttribute id="LGNUM"/>
-      <viewAttribute id="TANUM"/>
-      <viewAttribute id="TBNUM"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="TOQuery_API.db.synonyms::LTAK"/>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="Join_3" cardinality="C1_1" joinType="inner">
     <viewAttributes>
@@ -880,6 +867,15 @@
     </input>
     <joinAttribute name="LGNUM"/>
     <joinAttribute name="TANUM"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_5">
+    <viewAttributes>
+      <viewAttribute id="LGNUM"/>
+      <viewAttribute id="TANUM"/>
+      <viewAttribute id="TBNUM"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TOQuery_API.db.synonyms::LTAK"/>
   </calculationView>
 </calculationViews>
 <logicalModel id="Join_2">
@@ -1562,18 +1558,14 @@
       <upperLeftCorner x="221" y="217"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape modelObjectName="Projection_4" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+    <shape modelObjectName="Join_3" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="320" y="30"/>
       <rectangleSize width="136"/>
     </shape>
   
-    <shape modelObjectName="Join_3" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+    <shape modelObjectName="Projection_4" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="86" y="30"/>
-      <rectangleSize width="126.94384765625"/>
-    </shape>
-    <shape expanded="true" modelObjectName="Projection_5" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-106" y="455"/>
-      <rectangleSize height="30" width="160"/>
+      <rectangleSize width="126"/>
     </shape>
     <shape expanded="true" modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="-17" y="346"/>
@@ -1581,12 +1573,16 @@
     </shape>
     <shape modelObjectName="Projection_3" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="136.0234375"/>
+      <rectangleSize width="136"/>
     </shape>
     <shape modelObjectName="Projection_5" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="136.0234375"/>
+      <rectangleSize width="136"/>
     </shape>
-  </shapes>
+  
+    <shape expanded="true" modelObjectName="Projection_5" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-106" y="455"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
 </layout>
 </Calculation:scenario>

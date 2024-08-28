@@ -29,6 +29,8 @@
       <viewAttribute id="KDAUF"/>
       <viewAttribute id="KDPOS"/>
       <viewAttribute id="RSNUM"/>
+    
+      <viewAttribute id="RSNUM_N"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="db.models::OrderData"/>
@@ -276,7 +278,7 @@
     <joinAttribute name="LGNUM"/>
     <joinAttribute name="TBNUM"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="C1_1" joinType="leftOuter">
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="C1_1" joinType="leftOuter" optimizeJoinColumns="false">
     <viewAttributes>
       <viewAttribute id="LGNUM"/>
       <viewAttribute id="TANUM"/>
@@ -360,6 +362,8 @@
       <viewAttribute id="PSPEL"/>
       <viewAttribute id="KDAUF"/>
       <viewAttribute id="KDPOS"/>
+    
+      <viewAttribute id="RSNUM_N"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="Join_1">
@@ -447,7 +451,8 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="PSPEL" source="PSPEL"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="KDAUF" source="KDAUF"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="KDPOS" source="KDPOS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="RSNUM" source="RSNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RSNUM_N" source="RSNUM_N"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RSNUM" source="RSNUM_N"/>
     </input>
     <joinAttribute name="RSNUM"/>
   </calculationView>
@@ -781,8 +786,7 @@
     <attribute id="KDPOS" order="82" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="KDPOS"/>
       <keyMapping columnObjectName="Join_2" columnName="KDPOS"/>
-    </attribute>
-  </attributes>
+    </attribute></attributes>
   <calculatedAttributes/>
   <baseMeasures/>
   <calculatedMeasures/>

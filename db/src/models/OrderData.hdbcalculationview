@@ -124,7 +124,16 @@
       <keyMapping columnObjectName="Join_1" columnName="RSNUM"/>
     </attribute>
   </attributes>
-  <calculatedAttributes/>
+  <calculatedAttributes>
+    <calculatedAttribute id="RSNUM_N" order="13" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="10">
+        <formula>CASE &quot;RSNUM&quot; 
+	 WHEN '0000000000' then 'Jerry' 
+	 ELSE &quot;RSNUM&quot; 
+ END</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
   <baseMeasures/>
   <calculatedMeasures/>
   <restrictedMeasures/>
